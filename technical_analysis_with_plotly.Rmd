@@ -1,8 +1,10 @@
 ---
 title: "Analisis Técnico usando Plotly"
-subtitle: "Amazon :)"
 author: "Gabriel Cabrera"
-output: html_notebook
+subtitle: Amazon :)
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r, eval = TRUE}
@@ -10,8 +12,8 @@ if(!require("pacman")) install.packages("pacman")
 p_load("plotly", "quantmod", "IRdisplay")
 ```
 
-```{r, eval = TRUE}
-getSymbols("AMZN", src = 'yahoo', from = "2010-01-01", periodicity = "daily")
+```{r, eval = TRUE, message=TRUE, warning = FALSE}
+getSymbols("AMZN", src = 'yahoo', from = "2018-07-01", periodicity = "daily")
 ```
 
 ```{r, eval = TRUE}
@@ -96,17 +98,28 @@ rs <- list(visible = TRUE, x = 0.5, y = -0.055, xanchor = 'center', yref = 'pape
 ```
 
 ```{r, eval = TRUE}
-ppp <- subplot(p, pp, heights = c(0.7,0.2), nrows=2, shareX = TRUE, titleY = TRUE) %>%
-               layout(title = paste("S&P 500: 2015-01-01",Sys.Date()), xaxis = list(rangeselector = rs),
-               legend = list(orientation = 'h', x = 0.5, y = 1, xanchor = 'center', yref = 'paper',
-               font = list(size = 10),
-               bgcolor = 'transparent'))
+finale_plotly <- subplot(p, pp, heights = c(0.7,0.2), nrows=2, shareX = TRUE, titleY = TRUE) %>%
+                 layout(title = paste("S&P 500: 2018-07-01",Sys.Date()), xaxis = list(rangeselector = rs),
+                 legend = list(orientation = 'h', x = 0.5, y = 1, xanchor = 'center', yref = 'paper',
+                 font = list(size = 10),
+                 bgcolor = 'transparent'))
 ```
 
 ```{r, eval = TRUE}
-htmlwidgets::saveWidget(ppp, "ppp.html") 
-display_html("ppp.html")
+htmlwidgets::saveWidget(finale_plotly, "finale_plotly.html") 
 ```
+
+
+```{r, echo = TRUE, eval = FALSE}
+finale_plotly 
+```
+
+<center>
+```{r, echo = FALSE, fig.alin='center'}
+finale_plotly 
+```
+</center>
+
 
 
 
