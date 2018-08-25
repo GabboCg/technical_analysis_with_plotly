@@ -1,38 +1,40 @@
 ---
 title: "Analisis Técnico usando Plotly"
+subtitle: "Amazon :)"
+author: "Gabriel Cabrera"
 output: html_notebook
 ---
 
-```{r}
+```{r, eval = TRUE}
 if(!require("pacman")) install.packages("pacman")
 p_load("plotly", "quantmod")
 ```
 
-```{r}
+```{r, eval = TRUE}
 getSymbols("AMZN", src = 'yahoo', from = "2010-01-01", periodicity = "daily")
 ```
 
-```{r}
+```{r, eval = TRUE}
 amazon <- data.frame(date = index(AMZN), coredata(AMZN))
 ```
 
-```{r}
+```{r, eval = TRUE}
 bbands <- data.frame(BBands(HLC(AMZN))) %>% 
           na.omit() %>% 
           select(dn, mavg, up)
 ```
 
-```{r}
+```{r, eval = TRUE}
 amazon <- amazon %>% 
           filter(date >= as.Date(rownames(bbands)[1]))
 ```
 
-```{r}
+```{r, eval = TRUE}
 df <- cbind(amazon,bbands)
 ```
 
 
-```{r}
+```{r, eval = TRUE}
 for (i in 1:nrow(df)){
   if (df$AMZN.Close[i] >= df$AMZN.Open[i]) {
     
@@ -45,12 +47,12 @@ for (i in 1:nrow(df)){
 }
 ```
 
-```{r}
+```{r, eval = TRUE}
 i <- list(line = list(color = '#17BECF'))
 d <- list(line = list(color = '#7F7F7F'))
 ```
 
-```{r}
+```{r, eval = TRUE}
 p <- df %>%
      plot_ly(x = ~date, type="candlestick", open = ~AMZN.Open, close = ~AMZN.Close,
              high = ~AMZN.High, low = ~AMZN.Low, name = "AMZN",
@@ -64,14 +66,14 @@ p <- df %>%
      layout(yaxis = list(title = "Precio"))
 ```
 
-```{r}
+```{r, eval = TRUE}
 pp <- df %>%
       plot_ly(x = ~date, y = ~AMZN.Volume, type='bar', name = "AMZN Volumen",
         color = ~ direction, colors = c('#17BECF','#7F7F7F')) %>%
       layout(yaxis = list(title = "Volume"))
 ```
 
-```{r}
+```{r, eval = TRUE}
 rs <- list(visible = TRUE, x = 0.5, y = -0.055, xanchor = 'center', yref = 'paper',
           font = list(size = 9),
           buttons = list(
@@ -93,7 +95,7 @@ rs <- list(visible = TRUE, x = 0.5, y = -0.055, xanchor = 'center', yref = 'pape
           ))
 ```
 
-```{r}
+```{r, eval = TRUE}
 ppp <- subplot(p, pp, heights = c(0.7,0.2), nrows=2, shareX = TRUE, titleY = TRUE) %>%
                layout(title = paste("S&P 500: 2015-01-01",Sys.Date()), xaxis = list(rangeselector = rs),
                legend = list(orientation = 'h', x = 0.5, y = 1, xanchor = 'center', yref = 'paper',
@@ -104,7 +106,6 @@ ppp <- subplot(p, pp, heights = c(0.7,0.2), nrows=2, shareX = TRUE, titleY = TRU
 ```{r, eval = TRUE}
 ppp
 ```
-
 
 
 
