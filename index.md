@@ -1,3 +1,7 @@
+---
+title: Análisis Técnico Usando Plotly
+---
+
 # Bienvenido a un ejemplo de 
 
 * [R code](technical_analysis_with_plotly.nb.html)
