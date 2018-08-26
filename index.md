@@ -1,6 +1,15 @@
 ---
 title: Análisis Técnico Usando Plotly
-author: Gabriel Cabrera 
+subtitle: Tópicos en Economía y Negocios Usando R 
+author: Gabriel Cabrera
+---
+
+---
+
+> “PowerPoint is like being trapped in the style of early Egyptian flatland cartoons rather than using the more effective tools of Renaissance visual representation.” 
+>
+> --- Edward R. Tufte, Beautiful Evidence
+
 ---
 
 # Introducción 
