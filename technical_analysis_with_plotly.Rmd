@@ -2,9 +2,7 @@
 title: "Analisis Técnico usando Plotly"
 author: "Gabriel Cabrera"
 subtitle: "Amazon" 
-output:
-  html_document:
-    df_print: paged
+output: html_notebook
 ---
 
 ```{r, eval = TRUE}
