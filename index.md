@@ -17,7 +17,7 @@ El presente archivo es un ejemplo de análisis técnico usando la librería plot
 
     * [Plotly](finale_plotly.html)
     
-    <br> 
+    <br>  
 
 <center>
 <iframe src="https://giphy.com/embed/WW3YU74Oi5nLa" width="480" height="259" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reactiongifs-WW3YU74Oi5nLa"></a></p>
