@@ -6,9 +6,10 @@ author: Gabriel Cabrera
 
 ---
 
-> “PowerPoint is like being trapped in the style of early Egyptian flatland cartoons rather than using the more effective tools of Renaissance visual representation.” 
+> “The most valuable commodity I know of is information.” 
 >
-> --- Edward R. Tufte, Beautiful Evidence
+> --- **Gordon Gekko**, personaje principal de la película de 1987 Wall Street y su secuela del 2010, Wall Street: Money Never Sleeps, interpretado por Michael Douglas.
+
 
 ---
 
