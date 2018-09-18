@@ -1,9 +1,22 @@
 ---
 title: "Analisis Técnico usando Plotly"
-author: "Gabriel Cabrera"
-subtitle: "Amazon" 
-output: html_notebook
+author: <a href="https://gcabrerag.rbind.io/"> <h3> Gabriel Cabrera </h3> </a> \newline Facultad de Economía y Negocios, Universidad de Chile, Chile
+date: "2018/08/09 (updated: `r Sys.Date()`)"
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    number_sections: true
+    theme: united
+    highlight: tango
+    df_print: paged
+    code_folding: show
+    self_contained: false
+    keep_md: false
+    encoding: "UTF-8"
 ---
+
 
 ```{r, eval = TRUE}
 if(!require("pacman")) install.packages("pacman")
@@ -117,7 +130,6 @@ finale_plotly
 finale_plotly 
 ```
 </center>
-
 
 
 
